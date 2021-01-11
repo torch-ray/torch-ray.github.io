@@ -1,9 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://torch-ray.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://torch-ray.github.io/" rel="alternate" type="text/html" /><updated>2021-01-11T09:14:01+09:00</updated><id>https://torch-ray.github.io/feed.xml</id><title type="html">Yes! Swift</title><subtitle>취미는 이길 수 없다.</subtitle><author><name>Traveling in CS World</name></author><entry><title type="html">github.io 블로그 시작하기</title><link href="https://torch-ray.github.io/blog/first-post/" rel="alternate" type="text/html" title="github.io 블로그 시작하기" /><published>2020-01-10T00:00:00+09:00</published><updated>2020-01-10T22:06:00+09:00</updated><id>https://torch-ray.github.io/blog/first-post</id><content type="html" xml:base="https://torch-ray.github.io/blog/first-post/">&lt;p&gt;GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.
-GitHub Blog 서비스의 이름은 Pages이다.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://torch-ray.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://torch-ray.github.io/" rel="alternate" type="text/html" /><updated>2021-01-11T14:00:52+09:00</updated><id>https://torch-ray.github.io/feed.xml</id><title type="html">Yes! Swift</title><subtitle>취미는 이길 수 없다.</subtitle><author><name>내가 아니면 누구도 못한다</name></author><entry><title type="html">github.io 블로그 시작하기</title><link href="https://torch-ray.github.io/blog/first-post/" rel="alternate" type="text/html" title="github.io 블로그 시작하기" /><published>2020-01-10T00:00:00+09:00</published><updated>2020-01-11T22:06:00+09:00</updated><id>https://torch-ray.github.io/blog/first-post</id><content type="html" xml:base="https://torch-ray.github.io/blog/first-post/">&lt;p&gt;Yes! Swift!&lt;br /&gt;
+Swift는 일이고 CS(Computer Science)가 취미인 개발자의 블로그&lt;/p&gt;
 
-&lt;p&gt;Pages가 다른 블로그 플랫폼 보다 편한 것 같아서 마음에 든다.
-다른 사람들도 같이 많이 사용했으면 좋겠다는 생각이 든다.&lt;/p&gt;
+&lt;p&gt;YFM에서 정의한 제목을 이중 괄호 구문으로 본문에 추가할 수 있다.&lt;/p&gt;
 
-&lt;p&gt;YFM에서 정의한 제목을 이중 괄호 구문으로 본문에 추가할 수 있다.
-이 글의 제목은 github.io 블로그 시작하기이고
-마지막으로 수정된 시간은 2020-01-10 08:06:00 -0500이다.&lt;/p&gt;</content><author><name>Traveling in CS World</name></author><category term="Blog" /><category term="Blog" /><summary type="html">GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.</summary></entry></feed>
+&lt;p&gt;이 글의 제목 : github.io 블로그 시작하기&lt;br /&gt;
+마지막으로 수정된 시간 : 2020-01-11 08:06:00 -0500&lt;/p&gt;</content><author><name>내가 아니면 누구도 못한다</name></author><category term="Blog" /><category term="Blog" /><summary type="html">GitHub Blog 서비스인 github.io 블로그 시작하기로 했다.</summary></entry></feed>
