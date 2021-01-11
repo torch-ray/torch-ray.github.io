@@ -1,9 +1,9 @@
 # main links
 main:
   - title: "CS"
-    url: https://torch-ray.github.io/cs
+    url: /cs/
   - title: "Algorithm"
-     url: https://torch-ray.github.io/algorithm
+    url: /algorithm/
   # - title: "Sample Posts"
   #   url: /year-archive/
   # - title: "Sample Collections"

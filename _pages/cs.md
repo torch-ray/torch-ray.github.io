@@ -4,6 +4,6 @@ permalink: /cs/
 layout: single
 ---
 
-## torch-ray@github.io Blog
+## 학습리스트
 
-컴퓨터 과학에 대한 학습내용 공유
+- CPU만들기

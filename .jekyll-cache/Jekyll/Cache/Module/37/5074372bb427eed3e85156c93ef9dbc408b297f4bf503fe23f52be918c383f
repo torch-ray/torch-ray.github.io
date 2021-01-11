@@ -1,4 +1,4 @@
-I"Ê
+I"ß
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
@@ -10,7 +10,9 @@
           
         </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+              <a href="/cs/">CS</a>
+            </li><li class="masthead__menu-item">
+              <a href="/algorithm/">Algorithm</a>
             </li></ul>
         
         <button class="greedy-nav__toggle hidden" type="button">
