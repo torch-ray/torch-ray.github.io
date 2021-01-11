@@ -93,15 +93,15 @@ analytics:
 
 # Site Author
 author:
-  name             : "CS가 취미인 개발자"
+  name             : "CS는 재미로하는 거야"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "취미는 이길 수 없다."
+  bio              : "Traveling in CS World"
   location         : "South Korea"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
+      url: "mailto:ddarjae@naver.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -110,7 +110,7 @@ author:
       # url: "https://twitter.com/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
+      url: "https://www.facebook.com/woosuk.seo.77"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url: "https://github.com/"
