@@ -19,9 +19,9 @@ locale                   : "en-US"
 title                    : "Yes! Swift"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "CS가 취미인 개발자"
+name                     : "CS가 취미인 개발자의 블로그"
 description              : "취미는 이길 수 없다."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://torch-ray.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -93,9 +93,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "CS는 재미로하는 거야"
+  name             : "Traveling in CS World"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "Traveling in CS World"
+  bio              : "Swift는 일이고 CS는 취미고"
   location         : "South Korea"
   email            :
   links:
