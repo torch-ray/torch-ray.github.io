@@ -93,7 +93,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Traveling in CS World"
+  name             : "내가 아니면 누구도 못한다"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Swift는 일이고 CS는 취미고"
   location         : "South Korea"
@@ -126,7 +126,7 @@ footer:
       # url:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
-      # url:
+      url: "https://www.facebook.com/woosuk.seo.77"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       # url:
