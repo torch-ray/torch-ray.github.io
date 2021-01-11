@@ -1,6 +1,6 @@
 ---
 title: "알고리즘 - 분산처리"
-permalink: /algorithm/baekjoon1009
+permalink: /algorithm/baekjoon1009/
 layout: single
 ---
 

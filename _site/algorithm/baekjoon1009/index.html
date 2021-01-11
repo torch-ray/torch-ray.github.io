@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Algorithm - Yes! Swift</title>
+<!-- begin _includes/seo.html --><title>알고리즘 - 분산처리 - Yes! Swift</title>
 <meta name="description" content="취미는 이길 수 없다.">
 
 
@@ -20,8 +20,8 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Yes! Swift">
-<meta property="og:title" content="Algorithm">
-<meta property="og:url" content="https://torch-ray.github.io/algorithm/">
+<meta property="og:title" content="알고리즘 - 분산처리">
+<meta property="og:url" content="https://torch-ray.github.io/algorithm/baekjoon1009/">
 
 
   <meta property="og:description" content="취미는 이길 수 없다.">
@@ -41,7 +41,7 @@
   
 
 
-<link rel="canonical" href="https://torch-ray.github.io/algorithm/">
+<link rel="canonical" href="https://torch-ray.github.io/algorithm/baekjoon1009/">
 
 
 
@@ -155,7 +155,7 @@
 
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Algorithm">
+    <meta itemprop="headline" content="알고리즘 - 분산처리">
     
     
     
@@ -163,7 +163,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">Algorithm
+          <h1 id="page-title" class="page__title" itemprop="headline">알고리즘 - 분산처리
 </h1>
           
 
@@ -173,11 +173,48 @@
 
       <section class="page__content" itemprop="text">
         
-        <h2 id="학습리스트">학습리스트</h2>
+        <h2 id="백준-1009번-with-swift">백준 1009번 with Swift</h2>
+<p><img width="1161" alt="스크린샷 2021-01-11 오후 5 35 46" src="https://user-images.githubusercontent.com/74946802/104159880-7b157080-5433-11eb-8ff0-c7475dcf1ea7.png" /></p>
 
+<p>1번 데이터는 1번 컴퓨터, 7번은 7번, 12번은 2번…<br />
+즉 마지막 데이터와 컴퓨터의 1의자리수를 맞춰서 계산해주면된다.</p>
 <ul>
-  <li>백준1009번: <a href="baekjoon1009/">분산처리</a></li>
+  <li>체크포인트1 : 0은 0번 컴퓨터가 아니라 10번 컴퓨터</li>
+  <li>체크포인트2 : 모든 수의 1의 제곱은 1</li>
 </ul>
+
+<h2 id="readline을-활용하여-for-loop를-반복할-정수를-입력">readLine()을 활용하여 for-loop를 반복할 정수를 입력</h2>
+
+<p><img width="601" alt="스크린샷 2021-01-11 오후 5 10 52" src="https://user-images.githubusercontent.com/74946802/104158277-57046000-5430-11eb-80ab-a59f70420868.png" /></p>
+
+<p>readLine()은 입력값으로 String?타입을 갖는다. 즉, 옵셔널스트링 값이기 때문에 Int() 및 !를 활용하여 정수변환과 Unwrapping을 해줘야한다.</p>
+
+<h2 id="n번만큼-for-loop를-돌면서-데이터와-컴퓨터의-수를-입력">n번만큼 for-loop를 돌면서 데이터와 컴퓨터의 수를 입력</h2>
+
+<p><img width="600" alt="스크린샷 2021-01-11 오후 5 11 37" src="https://user-images.githubusercontent.com/74946802/104158570-f9244800-5430-11eb-97e9-31d99d611123.png" /></p>
+
+<p>입력값은 띄어쓰기를 기준으로 분리하고 compactMap을 활용하여 정수형 배열로 변환한다. 띄어쓰기 기준으로 분리는 components 외에 split으로도 가능하다.</p>
+
+<p>데이터와 컴퓨터의 수를 각 %10, %4로 나머지 연산처리하는 이유는 999^9999등과 같이 큰 수를 연산할 때 시간초과를 방지하기 위해서다. 어떤 수를 제곱한다고 가정했을 때 밑을 %10 처리할 수 있는 근거는 특정 수의 제곱에는 일의 자리 숫자만 필요하기 때문이다. 또한, 지수를 %4 처리할 수 있는 근거는 모든 수의 제곱은 2~4번마다 반복된다(0, 1, 5, 6 제외지만, 크게 의미없다).</p>
+
+<p>다만 4가 입력되는 경우에는 나머지가 0이 되기 때문에 이 경우만 4로 예외처리 해준다.</p>
+
+<h2 id="1과-0의-예외처리">1과 0의 예외처리</h2>
+
+<p><img width="607" alt="스크린샷 2021-01-11 오후 5 11 52" src="https://user-images.githubusercontent.com/74946802/104159115-16a5e180-5432-11eb-8f62-b297418ca072.png" /></p>
+
+<p>inputVal[1]의 값은 지수로 올라가는 값인데, 어떤 수를 0제곱하면 결과는 1로 같기 때문에 예외처리해준다. 데이터의 수 % 10이 0이되는 경우 역시 (0, 10, 100… 등) 결과는 10으로 같다.</p>
+
+<h2 id="제곱계산">제곱계산</h2>
+
+<p><img width="632" alt="스크린샷 2021-01-11 오후 5 12 01" src="https://user-images.githubusercontent.com/74946802/104159549-e14dc380-5432-11eb-8236-89432d293954.png" /></p>
+
+<p>예외처리되지 않은 남은 수들을 모두 제곱계산해준다.<br />
+b-1만큼 for-loop를 반복해야 원하는만큼 반복이된다.<br />
+(특정수를 제곱하는 경우 count가 2가아니라 1이되기 때문)</p>
+
+<h2 id="전체코드">전체코드</h2>
+<p><img width="611" alt="스크린샷 2021-01-11 오후 5 12 13" src="https://user-images.githubusercontent.com/74946802/104159781-499ca500-5433-11eb-8ab7-f29b25bdc88d.png" /></p>
 
         
       </section>
