@@ -2,6 +2,7 @@
 title: "Algorithm"
 permalink: /algorithm/
 layout: single
+author_profile: true
 ---
 
 ## 학습리스트

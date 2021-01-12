@@ -2,6 +2,7 @@
 title: "Computer Science"
 permalink: /cs/
 layout: single
+author_profile: true
 ---
 
 ## 학습리스트

@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://torch-ray.github.io/blog/first-post/</loc>
+<loc>https://torch-ray.github.io/about/first-post/</loc>
 <lastmod>2020-01-11T22:06:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://torch-ray.github.io/cs_project/CS/</loc>
+<lastmod>2020-01-12T00:00:00+09:00</lastmod>
+</url>
+<url>
+<loc>https://torch-ray.github.io/categories/CS_Project/</loc>
 </url>
 <url>
 <loc>https://torch-ray.github.io/algorithm/</loc>
@@ -12,6 +19,9 @@
 </url>
 <url>
 <loc>https://torch-ray.github.io/algorithm/baekjoon1076/</loc>
+</url>
+<url>
+<loc>https://torch-ray.github.io/categories/</loc>
 </url>
 <url>
 <loc>https://torch-ray.github.io/cs/</loc>

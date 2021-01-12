@@ -3,9 +3,9 @@ title:  "github.io 블로그 시작"
 excerpt: "GitHub Blog 서비스인 github.io 블로그 시작"
 
 categories:
-  - Blog
+  - About
 tags:
-  - Blog
+  - About
 last_modified_at: 2020-01-11T08:06:00-05:00
 ---
 
