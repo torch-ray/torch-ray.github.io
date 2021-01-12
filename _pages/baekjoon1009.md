@@ -2,7 +2,6 @@
 title: "백준 1009번 with Swift"
 permalink: /algorithm/baekjoon1009/
 layout: single
-author_profile: true
 ---
 
 ## 알고리즘 - 분산처리

@@ -2,7 +2,6 @@
 title: "CPU만들기1 - NandGate"
 permalink: /cs/nandgate/
 layout: single
-author_profile: true
 ---
 
 ## 논리회로 학습하기 with NandGate  

@@ -2,7 +2,6 @@
 title: "백준 1076번 with Swift"
 permalink: /algorithm/baekjoon1076/
 layout: single
-author_profile: true
 ---
 
 ## 알고리즘 - 저항
