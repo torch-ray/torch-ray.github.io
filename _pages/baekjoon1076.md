@@ -1,10 +1,10 @@
 ---
-title: "알고리즘 - 분산처리"
+title: "백준 1076번 with Swift"
 permalink: /algorithm/baekjoon1076/
 layout: single
 ---
 
-## 백준 1076번 with Swift
+## 알고리즘 - 저항
 
 ## 문제
 <img width="673" alt="스크린샷 2021-01-12 오전 9 02 32" src="https://user-images.githubusercontent.com/74946802/104252258-f66b3680-54b4-11eb-954d-f26131cb916b.png">
