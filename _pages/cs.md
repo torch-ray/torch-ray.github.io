@@ -7,3 +7,4 @@ layout: single
 ## 학습리스트
 
 - CPU만들기1: [논리회로](nandgate/)
+- CPU만들기2: [레지스터](register/)
