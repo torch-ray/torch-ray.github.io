@@ -1,12 +1,11 @@
 ---
 title: "백준 1076번 with Swift"
-permalink: /algorithm/baekjoon1076/
+permalink: /ps/baekjoon1076/
 layout: single
 ---
 
-## 알고리즘 - 백준(저항)
+## 백준 - 저항
 
-## 문제
 <img width="673" alt="스크린샷 2021-01-12 오전 9 02 32" src="https://user-images.githubusercontent.com/74946802/104252258-f66b3680-54b4-11eb-954d-f26131cb916b.png">
 
 주어진 세가지 색의 값과 곱을 활용하여 저항을 구하는 문제다. 예를들어 yellow, violet, red가 주어진다면 처음 두 색 yellow(4)와 violet(7)의 값을 가져온 후 마지막 색인 red(100)의 곱을 가져와 곱해주면 된다. (답은 47 * 100 = 4700)

@@ -2,8 +2,8 @@
 main:
   - title: "CS"
     url: /cs/
-  - title: "Algorithm"
-    url: /algorithm/
+  - title: "ProblemSolving"
+    url: /ps/
   - title: "Categories"
     url: /categories/
   # - title: "Sample Collections"
