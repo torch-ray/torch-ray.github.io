@@ -4,7 +4,7 @@ permalink: /algorithm/baekjoon1009/
 layout: single
 ---
 
-## 알고리즘 - 분산처리
+## 알고리즘 - 백준(분산처리)
 <img width="1161" alt="스크린샷 2021-01-11 오후 5 35 46" src="https://user-images.githubusercontent.com/74946802/104159880-7b157080-5433-11eb-8ff0-c7475dcf1ea7.png">{: width="100%" height="100%"}
 
 
