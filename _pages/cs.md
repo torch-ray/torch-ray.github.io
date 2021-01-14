@@ -8,6 +8,7 @@ layout: single
 
 - CPU만들기1: [논리회로](nandgate/)
 - CPU만들기2: [레지스터](register/)
+- CPU만들기3: [데이터복사](register2/)
 
 ## 기초학습
 
