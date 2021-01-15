@@ -1,4 +1,4 @@
-I"h<h2 id="백준">백준</h2>
+I"�<h2 id="백준">백준</h2>
 
 <ul>
   <li>백준1009번: <a href="baekjoon1009/">분산처리</a></li>
@@ -10,5 +10,6 @@
 
 <ul>
   <li>리트코드14번: <a href="leetcode14/">Longest Common Prefix</a></li>
+  <li>리트코드7번: <a href="leetcode7/">Reverse Integer</a></li>
 </ul>
 :ET

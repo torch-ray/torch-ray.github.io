@@ -1,0 +1,45 @@
+I"U<h2 id="리트코드---reverse-integer">리트코드 - Reverse Integer</h2>
+
+<p><img width="793" alt="스크린샷 2021-01-15 오전 8 48 38" src="https://user-images.githubusercontent.com/74946802/104662566-7cce8500-570e-11eb-8b16-859e3224f745.png" /></p>
+
+<p>Int32 x가 주어지면 x의 Reverse 형태를 반환하는 문제이다. 즉, 321의 경우 123을 반환하고 -123의 경우 -321을 반환하면된다. 단 Reverse 형태가 Int32를 초과하는 경우에는 0을 반환해야한다.</p>
+
+<ul>
+  <li>체크포인트1: 음수부호를 별도로 처리해줘야한다.</li>
+  <li>체크포인트2: Int32 초과여부를 확인해야한다.</li>
+</ul>
+
+<h2 id="문자열로-만들어서-reverse">문자열로 만들어서 Reverse</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">str</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+  <span class="k">var</span> <span class="nv">reverseStr</span> <span class="o">=</span> <span class="kt">String</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="nf">reversed</span><span class="p">())</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>정수를 바로 reverse로 뒤집을 수는 없기 때문에 문자열 변환을 해준다. 123이 입력됐을 경우 “123”으로 변환된다. reversed()를 사용할 경우 Reversed Collection 타입으로 바뀌기 때문에 다시 한 번 String을 활용하여 문자열 변환을 해준다.</p>
+
+<h2 id="음수부호-처리">음수부호 처리</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">reverseStr</span><span class="o">.</span><span class="nf">hasSuffix</span><span class="p">(</span><span class="s">"-"</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">reverseStr</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+  <span class="n">reverseStr</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="s">"-"</span><span class="p">,</span> <span class="nv">at</span><span class="p">:</span> <span class="n">reverseStr</span><span class="o">.</span><span class="n">startIndex</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>x값으로 -123이 입력된 경우 Reverse형태로 변환하면 “321-“ 형태로 변환된다. 그래서 이 경우에 문자열 끝에 “-“ 부호가 붙어있는지 확인하고 붙어있다면 해당 값을 삭제하고 문자열 맨 앞으로 “-“ 부호를 삽입해준다. 문자열의 경우 1, 2, 3 등과 같은 정수형 Index를 사용할 수 없기때문에 문자열 Index를 활용해야한다.</p>
+
+<h2 id="int32-초과여부-확인">Int32 초과여부 확인</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="kt">Int32</span><span class="p">(</span><span class="n">reverseStr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kt">Int</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<p>if let 구문을 활용하여 reverseStr을 Int32로 변환한 값이 true 인지 false인지를 확인한다. true일 경우 해당 값을 그대로 Int로 변환하여 반환하면되고, false일 경우 if문이 실행되지 않고 바로 0을 반환한다.</p>
+
+<h2 id="전체코드">전체코드</h2>
+
+<p><img width="472" alt="스크린샷 2021-01-15 오전 9 08 08" src="https://user-images.githubusercontent.com/74946802/104663850-3c243b00-5711-11eb-89af-4db89109f6f5.png" /></p>
+:ET

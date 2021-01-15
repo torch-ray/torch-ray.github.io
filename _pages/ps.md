@@ -13,3 +13,4 @@ layout: single
 ## 리트코드
 
 - 리트코드14번: [Longest Common Prefix](leetcode14/)
+- 리트코드7번: [Reverse Integer](leetcode7/)
