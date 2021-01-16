@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Yes! Swift"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "CS가 취미인 개발자의 블로그"
+name                     : "PS가 취미인 개발자의 블로그"
 description              : "취미는 이길 수 없다."
 url                      : "https://torch-ray.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -95,7 +95,7 @@ analytics:
 author:
   name             :  "내가 아니면 누구도 못한다"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              :  "Swift는 일이고 CS는 취미고"
+  bio              :  "Swift는 일이고 PS는 취미고"
   location         :  "South Korea"
   email            :
   links:

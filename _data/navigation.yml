@@ -1,12 +1,27 @@
 # main links
 main:
-  - title: "CS"
-    url: /cs/
-  - title: "ProblemSolving"
-    url: /ps/
+  - title: "About"
+    url: /about/
   - title: "Categories"
     url: /categories/
   # - title: "Sample Collections"
   #   url: /collection-archive/
   # - title: "Sitemap"
   #   url: /sitemap/
+
+docs:
+  - title: ProblemSolving
+    children:
+      - title: "BaekJoon"
+        url: /docs/baekjoon/
+      - title: "LeetCode"
+        url: /docs/leetcode/
+      - title: "Programers"
+        url: /docs/programers/
+
+  - title: CoumputerScience
+    children:
+      - title: "Project"
+        url: /docs/project/
+      - title: "Basic"
+        url: /docs/basic/

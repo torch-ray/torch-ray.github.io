@@ -1,6 +1,8 @@
 ---
 title: "백준 1052번 with Swift"
-permalink: /ps/baekjoon1052/
+sidebar:
+  nav: "docs"
+permalink: /docs/baekjoon/1052/
 layout: single
 ---
 

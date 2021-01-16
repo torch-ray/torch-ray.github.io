@@ -1,6 +1,6 @@
 ---
 title: "리트코드 7 with Swift"
-permalink: /ps/leetcode7/
+permalink: /docs/leetcode/7
 layout: single
 ---
 
