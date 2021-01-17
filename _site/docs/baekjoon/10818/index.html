@@ -1,0 +1,389 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>백준 10818번 with Swift - Yes! Swift</title>
+<meta name="description" content="취미는 이길 수 없다.">
+
+
+  <meta name="author" content="내가 아니면 누구도 못한다">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Yes! Swift">
+<meta property="og:title" content="백준 10818번 with Swift">
+<meta property="og:url" content="https://torch-ray.github.io/docs/baekjoon/10818/">
+
+
+  <meta property="og:description" content="취미는 이길 수 없다.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://torch-ray.github.io/docs/baekjoon/10818/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "PS가 취미인 개발자의 블로그",
+      "url": "https://torch-ray.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Yes! Swift Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Yes! Swift
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">ProblemSolving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/baekjoon/">BaekJoon</a></li>
+          
+            <li><a href="/docs/leetcode/">LeetCode</a></li>
+          
+            <li><a href="/docs/programers/">Programers</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CoumputerScience</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/project/">Project</a></li>
+          
+            <li><a href="/docs/basic/">Basic</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="백준 10818번 with Swift">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">백준 10818번 with Swift
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="백준---최소-최대">백준 - 최소, 최대</h2>
+
+<p><img width="1173" alt="스크린샷 2021-01-18 오전 7 35 21" src="https://user-images.githubusercontent.com/74946802/104858073-1e004a00-5960-11eb-8a55-fd144f587048.png" /></p>
+
+<p>문제가 어렵지는 않다. N개의 정수가 주어지면 그 중 최소값, 최대값을 구해 출력하는 문제다. 주어지는 정수의 범위는 -1,000,000 이상 1,000,000이하</p>
+
+<ul>
+  <li>체크포인트: readLine(map)에서 시간초과가 발생한다.</li>
+</ul>
+
+<h2 id="시간초과-발생">시간초과 발생</h2>
+
+<p>본 문제는 사실 문제 해결에는 큰 어려움이 없다. 다만, 시간초과가 발생하는데 이 부분을 해결해줘야 한다. 첫번째로 작성해서 시간초과가 발생한 코드는 아래와 같다. 두 코드 모두 시간초과가 발생했다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">m</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span><span class="o">.</span><span class="nf">sorted</span><span class="p">()</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">first</span><span class="o">!</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">last</span><span class="o">!</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">m</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="정수-범위-활용">정수 범위 활용</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">a</span><span class="o">=</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+<span class="k">var</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span><span class="nv">m</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000000</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">a</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="n">i</span> <span class="p">{</span><span class="n">n</span><span class="o">=</span><span class="n">i</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">&lt;</span><span class="n">i</span> <span class="p">{</span><span class="n">m</span><span class="o">=</span><span class="n">i</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+<p>문제를 다시 읽어보니 정수 범위가 -1,000,000부터 1,000,000까지로 주어져 있어서 해당 정수 범위를 활용하여 코드를 작성해서 출력해봤다. 하지만 여전히 시간초과가 발생했다.</p>
+
+<h2 id="문제는-mapint-vs-intstring">문제는 Map(Int vs Int(String))</h2>
+
+<p>문제 없이 통과한 코드는 아래와 같다. 아래 두 코드 모두 통과한 것으로 보아 정수 범위 활용과 문제 해결에는 큰 연관성이 없다.</p>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">a</span><span class="o">=</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span><span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">a</span><span class="o">=</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="nv">$0</span><span class="p">))</span><span class="o">!</span><span class="p">}</span>
+<span class="k">var</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span><span class="nv">m</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000000</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">a</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="n">i</span> <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">&lt;</span><span class="n">i</span> <span class="p">{</span><span class="n">m</span><span class="o">=</span><span class="n">i</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>아래 두 코드는 위 코드에서 Map의 String변경 부분을 제외한 코드, 다시 시간초과가 발생했다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">a</span><span class="o">=</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="nf">min</span><span class="p">()</span><span class="o">!</span><span class="p">,</span><span class="n">a</span><span class="o">.</span><span class="nf">max</span><span class="p">()</span><span class="o">!</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">a</span><span class="o">=</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="nf">split</span><span class="p">(</span><span class="nv">separator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+<span class="k">var</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span><span class="nv">m</span><span class="p">)</span><span class="o">=</span><span class="p">(</span><span class="mi">1000000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1000000</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">a</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="n">i</span> <span class="p">{</span><span class="n">n</span> <span class="o">=</span> <span class="n">i</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">m</span><span class="o">&lt;</span><span class="n">i</span> <span class="p">{</span><span class="n">m</span><span class="o">=</span><span class="n">i</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>결국 map{Int($0)!} vs map{Int(String($0))!}에서 후자가 승리한 것인데, 해당 부분이 아직 이해되지 않는다. 어떤 메카니즘으로 전자는 시간초과가 되고 후자는 통과 할 수 있는지 학습 후에 관련 내용을 재업로드할 예정이다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://www.facebook.com/woosuk.seo.77" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 PS가 취미인 개발자의 블로그. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
