@@ -12,6 +12,8 @@ main:
 docs:
   - title: ProblemSolving
     children:
+      - title: "TodayMyStatus"
+        url: /docs/tms
       - title: "BaekJoon"
         url: /docs/baekjoon/
       - title: "LeetCode"
