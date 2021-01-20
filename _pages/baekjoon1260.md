@@ -12,7 +12,7 @@ layout: single
 
 문제 제목 그대로 DFS와 BFS를 출력하면된다. 방문할 수 있는 노드가 여러개인 경우 작은 숫자부터 방문하고, 더 이상 방문할 노드가 없으면 종료한다.
 
-- 체크포인트: [DFS와 BFS란?](https://www.youtube.com/watch?v=-wsYtm0x3nw)
+- 체크포인트: [DFS와 BFS란?](https://www.youtube.com/watch?v=_hxFgg7TLZQ)
 
 ## 입력값을 받아 딕셔너리 형태로 노드 생성
 ``` swift
