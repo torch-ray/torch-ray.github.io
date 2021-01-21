@@ -1,0 +1,359 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>백준 1463번 with Swift - Yes! Swift</title>
+<meta name="description" content="취미는 이길 수 없다.">
+
+
+  <meta name="author" content="내가 아니면 누구도 못한다">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Yes! Swift">
+<meta property="og:title" content="백준 1463번 with Swift">
+<meta property="og:url" content="https://torch-ray.github.io/docs/baekjoon/1463/">
+
+
+  <meta property="og:description" content="취미는 이길 수 없다.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://torch-ray.github.io/docs/baekjoon/1463/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "PS가 취미인 개발자의 블로그",
+      "url": "https://torch-ray.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Yes! Swift Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Yes! Swift
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">ProblemSolving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/tms">TodayMyStatus</a></li>
+          
+            <li><a href="/docs/baekjoon/">BaekJoon</a></li>
+          
+            <li><a href="/docs/leetcode/">LeetCode</a></li>
+          
+            <li><a href="/docs/programmers/">Programmers</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CoumputerScience</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/project/">Project</a></li>
+          
+            <li><a href="/docs/basic/">Basic</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="백준 1463번 with Swift">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">백준 1463번 with Swift
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="백준---1로-만들기">백준 - 1로 만들기</h2>
+
+<p><img width="1151" alt="스크린샷 2021-01-21 오전 9 19 25" src="https://user-images.githubusercontent.com/74946802/105256779-c7964400-5bc9-11eb-8543-7121a8f39017.png" /></p>
+
+<p>1보다 크거나 같고 10^6보다 작거나 같은 정수 N이 주어졌을 때 (1). 3으로 나누기, (2), 2로 나누기, (3). 1빼기를 활용하여 1로 만들기 위해 연산을 하는 최소 횟수를 구하는 문제이다.</p>
+
+<ul>
+  <li>체크포인트1: 모든 수를 주어진 방식대로 연산하다보면 반드시 이전 수가 나온다.</li>
+  <li>체크포인트2: <a href="https://www.youtube.com/watch?v=K15qLnKKrow">동적계획법</a></li>
+  <li>체크포인트3: 2와 3의 배수, 즉 6의 배수의 처리</li>
+</ul>
+
+<h2 id="입력값-저장-및-빈-배열-생성">입력값 저장 및 빈 배열 생성</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">dp</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">](</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<p>readLine을 활용하여 전달받은 입력값을 Int로 변환하여 상수 n에 저장한다. 그리고 동적계획법을 활용하기 위해 빈 배열을 생성한다.</p>
+
+<h2 id="동적-계획법-활용">동적 계획법 활용</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">2</span><span class="o">..&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">{</span>
+  <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</code></pre></div></div>
+<p>생각보다 구현자체는 어렵지 않다. for문이 2부터 시작하는 이유는 입력될 수 있는 최소 값이 1인데, 1의 경우는 1로 만들기 위해 어떠한 연산도 필요없기 때문에 바로 0을 출력하는 예외처리를 해주면된다. 2부터 시작되는 경우 dp[2] = dp[1]+1인데, dp[1]은 앞서서 말했던 것처럼 0이기 때문에 dp[2]에는 0 + 1의 값인 1이 저장된다. 이와 같이 증가하는 수에 대해 이전값과 비교하여 1을 더해주면되는데, 이때 3으로 나눈값 또는 2로 나눈값과 비교하여 더 작은수를 저장하면된다.</p>
+
+<p>일단 default값은 dp[i-1] + 1값으로 설정을 해둔다. 그리고 i가 3으로 나누어 떨어지는 경우는 default값과 3으로 나눈값에 + 1을 해주는 경우를 비교한다. 마찬가지로 2로 나누어 떨어지는 경우는 default값과 2로 나누어 떨어지는 경우를 비교하여 더 작은 값을 저장하면 된다.</p>
+
+<p>이 때 if문을 if, else if형태로 쓰지 않고, if + if 문을 사용하는 이유는 6의 배수의 경우 때문이다. 6의 배수의 경우 if, else구문을 쓰게된다면 두 조건 중 하나의 조건만 비교하고 종료하게 되는데 그럴 경우에는 오답이 출력된다.</p>
+
+<h2 id="전체코드">전체코드</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">dp</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">](</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">2</span><span class="o">..&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">{</span>
+    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://www.facebook.com/woosuk.seo.77" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 PS가 취미인 개발자의 블로그. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
