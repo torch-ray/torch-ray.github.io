@@ -8,9 +8,9 @@ layout: single
 
 ## 프로그래머스 - 크레인 인형뽑기 게임
 
-<img width="714" alt="스크린샷 2021-01-21 오전 8 36 13" src="https://user-images.githubusercontent.com/74946802/105254202-5a33e480-5bc4-11eb-8908-d4644c261774.png">
-<img width="712" alt="스크린샷 2021-01-21 오전 8 36 32" src="https://user-images.githubusercontent.com/74946802/105254228-6750d380-5bc4-11eb-9eb0-ce774e79647c.png">
-<img width="724" alt="스크린샷 2021-01-21 오전 8 36 46" src="https://user-images.githubusercontent.com/74946802/105254245-70da3b80-5bc4-11eb-82b2-8738144993ca.png">
+<img width="714" alt="스크린샷 2021-01-21 오전 8 36 13" src="https://user-images.githubusercontent.com/74946802/105254202-5a33e480-5bc4-11eb-8908-d4644c261774.png">{: width="800" height="500"}
+<img width="712" alt="스크린샷 2021-01-21 오전 8 36 32" src="https://user-images.githubusercontent.com/74946802/105254228-6750d380-5bc4-11eb-9eb0-ce774e79647c.png">{: width="800" height="500"}
+<img width="724" alt="스크린샷 2021-01-21 오전 8 36 46" src="https://user-images.githubusercontent.com/74946802/105254245-70da3b80-5bc4-11eb-82b2-8738144993ca.png">{: width="800" height="500"}
 
 [[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]] 와 같은 형태로 인형이 담긴 배열이 주어진다. 0은 인형이 없다는 뜻이고 1, 2, 3 등의 정수는 인형의 종류를 나타낸다. 즉, 바구니에 [1, 1] 또는 [2, 2]와 같이 같은 종류의 인형이 들어갈 경우 두 인형이 터지면서 바구니에서 사라지게 된다. 이 때 터트려져 사라진 인형의 총 개수를 구하는 문제다.
 
