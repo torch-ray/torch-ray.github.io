@@ -18,8 +18,8 @@ docs:
         url: /docs/baekjoon/
       - title: "LeetCode"
         url: /docs/leetcode/
-      - title: "Programers"
-        url: /docs/programers/
+      - title: "Programmers"
+        url: /docs/programmers/
 
   - title: CoumputerScience
     children:

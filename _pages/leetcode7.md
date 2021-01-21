@@ -1,5 +1,7 @@
 ---
 title: "리트코드 7 with Swift"
+sidebar:
+  nav: "docs"
 permalink: /docs/leetcode/7
 layout: single
 ---
