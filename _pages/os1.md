@@ -2,7 +2,7 @@
 title: "운영체재 개요"
 sidebar:
   nav: "docs"
-permalink: /docs/os/1
+permalink: /docs/os/1/
 layout: single
 ---
 

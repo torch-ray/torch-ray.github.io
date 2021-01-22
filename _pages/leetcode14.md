@@ -2,7 +2,7 @@
 title: "리트코드 14 with Swift"
 sidebar:
   nav: "docs"
-permalink: /docs/leetcode/14
+permalink: /docs/leetcode/14/
 layout: single
 ---
 
