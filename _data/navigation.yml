@@ -25,5 +25,7 @@ docs:
     children:
       - title: "Project"
         url: /docs/project/
-      - title: "Basic"
-        url: /docs/basic/
+      - title: "Algorithm"
+        url: /docs/algorithm/
+      - title: "OperatingSystem"
+        url: /docs/os/

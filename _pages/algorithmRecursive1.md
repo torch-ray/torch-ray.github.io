@@ -1,6 +1,6 @@
 ---
 title: "알고리즘 기초 - Recursive(1)"
-permalink: /docs/basic/recursive1/
+permalink: /docs/algorithm/recursive1/
 layout: single
 ---
 

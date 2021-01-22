@@ -2,7 +2,7 @@
 title: "기초개념 학습"
 sidebar:
   nav: "docs"
-permalink: /docs/basic/
+permalink: /docs/algorithm/
 layout: single
 ---
 
