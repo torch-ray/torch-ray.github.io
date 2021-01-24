@@ -7,4 +7,5 @@ layout: single
 ---
 
 ## 알고리즘의 이해
-- 순환의 개념: [재귀함수1](recursive1/)
+- Recursion1: [순환의 개념](recursive1/)
+- Recursion2: [순환적으로 사고하기](recursive2/)

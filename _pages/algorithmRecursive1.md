@@ -1,10 +1,14 @@
 ---
 title: "알고리즘 기초 - Recursive(1)"
+sidebar:
+  nav: "docs"
 permalink: /docs/algorithm/recursive1/
 layout: single
 ---
 
-## 순환의 개념이해하기(1)
+## 순환의 개념이해하기
+
+참고자료: [영리한 프로그래밍을 위한 알고리즘 강좌](https://www.inflearn.com/course/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%95%EC%A2%8C/lecture/4072?tab=curriculum)
 
 Recursion은 순환 또는 재귀라고 한다. 일반적으로 우리가 말하는 재귀함수는 자기 자신을 호출하는 함수이다. 간단한 예시를 통해 살펴보자.
 
