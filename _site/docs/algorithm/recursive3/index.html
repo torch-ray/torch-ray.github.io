@@ -1,0 +1,378 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>알고리즘 기초 - Recursive(3) - Yes! Swift</title>
+<meta name="description" content="취미는 이길 수 없다.">
+
+
+  <meta name="author" content="내가 아니면 누구도 못한다">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Yes! Swift">
+<meta property="og:title" content="알고리즘 기초 - Recursive(3)">
+<meta property="og:url" content="https://torch-ray.github.io/docs/algorithm/recursive3/">
+
+
+  <meta property="og:description" content="취미는 이길 수 없다.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://torch-ray.github.io/docs/algorithm/recursive3/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "PS가 취미인 개발자의 블로그",
+      "url": "https://torch-ray.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Yes! Swift Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Yes! Swift
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">ProblemSolving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/tms">TodayMyStatus</a></li>
+          
+            <li><a href="/docs/baekjoon/">BaekJoon</a></li>
+          
+            <li><a href="/docs/leetcode/">LeetCode</a></li>
+          
+            <li><a href="/docs/programmers/">Programmers</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CoumputerScience</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/project/">Project</a></li>
+          
+            <li><a href="/docs/algorithm/">Algorithm</a></li>
+          
+            <li><a href="/docs/os/">OperatingSystem</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="알고리즘 기초 - Recursive(3)">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">알고리즘 기초 - Recursive(3)
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="순환-알고리즘의-설계">순환 알고리즘의 설계</h2>
+
+<p>참고자료: <a href="https://www.inflearn.com/course/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B0%95%EC%A2%8C/lecture/4073?tab=curriculum">영리한 프로그래밍을 위한 알고리즘 강좌</a></p>
+
+<p>Recursion을 작성할 때 어떤 방법으로, 어떤 요령을 통해 설계할 수 있는가?</p>
+
+<h2 id="base-case">Base Case</h2>
+
+<ul>
+  <li>Recursion 함수의 가장 기본적 형태는 반드시 BaseCase를 가져야한다.</li>
+  <li>모든 다른 케이스는 결국 BaseCase로 수렴해야한다.</li>
+</ul>
+
+<h2 id="암시적-매개변수와-명시적-매개변수">암시적 매개변수와 명시적 매개변수</h2>
+
+<ul>
+  <li>순차탐색(sequential search)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">n</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">target</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">i</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>data[0]에서 data[n-1]사이의 target을 검색하는 코드이다. n-1까지 탐색하라는 것은 주어진 데이터 n에의해 명시적으로 제시되지만 검색 구간의 시작 인덱스인 0은 보통 생략한다. 암묵적으로 당연히 0부터 시작한다고 생각되는 것, 즉 암시적 매개변수이다. 이렇게 Recursion이 아닌 코드에서는 굳이 매개변수를 늘릴 이유가 없기 때문에 암시적인 매개변수를 사용하는 것이 깔끔하고 좋을 수 있다. 하지만 Recursion에서는 그렇지 않다.</p>
+
+<ul>
+  <li>암시적 매개변수를 명시적 매개변수로!</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">begin</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">end</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">target</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">begin</span><span class="o">&gt;</span><span class="n">end</span> <span class="p">{</span><span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="n">begin</span><span class="p">]</span> <span class="p">{</span><span class="k">return</span> <span class="n">begin</span><span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span><span class="k">return</span> <span class="nf">search</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">begin</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">target</span><span class="p">)}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>이전 함수와의 차이점은 끝나는 점뿐만 아니라 시작점까지 명시적으로 매개변수로 제시됐다는 점이다. 그렇다면 왜 이런식으로 설계해야 할까? Recursion의 시작은 사실 크게 다르지 않다. begin에 0이 들어오면 암시적으로 0부터 시작하나, 명시적으로 0에서 시작하나 차이점이 없기 때문이다. 하지만 이후 자기 자신을 호출 할 때 상황이 달라진다. 0에서 부터 탐색한 값을 이제는 1에서 부터 탐색하도록 바꿔야 코드가 성립하기 때문이다. 이렇게 Recursion은 시작 할 때 뿐만 아니라, 자기 자신을 호출할 때의 상황까지 고려해서 코드를 설계해야 한다.</p>
+
+<ul>
+  <li>이진검색(binary search)</li>
+</ul>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">binarySearch</span><span class="p">(</span><span class="n">_</span> <span class="nv">data</span><span class="p">:[</span><span class="kt">Int</span><span class="p">],</span> <span class="n">_</span> <span class="nv">target</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">begin</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="n">_</span> <span class="nv">end</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">begin</span> <span class="o">&gt;</span> <span class="n">end</span> <span class="p">{</span><span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+    <span class="k">else</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">middle</span> <span class="o">=</span> <span class="p">(</span><span class="n">begin</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="n">data</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="p">{</span> <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">middle</span><span class="p">]}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="n">data</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="nf">binarySearch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">middle</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="p">{</span><span class="k">return</span> <span class="nf">binarySearch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">begin</span><span class="p">,</span> <span class="n">middle</span><span class="o">-</span><span class="mi">1</span><span class="p">)}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Recursion을 활용하여 이진검색을 설계할 때도 마찬가지이다. 암시적인 매개변수를 사용할 경우 자기 자신을 호출하는 부분을 구현할 수 없게된다. 이처럼 Recursion을 활용하여 코드를 설계할 때는 BaseCase뿐만 아니라, 필요에 따라 매개변수를 명시적으로 사용할 필요가 있다.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://www.facebook.com/woosuk.seo.77" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 PS가 취미인 개발자의 블로그. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
