@@ -12,3 +12,4 @@ layout: single
 - Recursion3: [순환 알고리즘의 설계](recursive3/)
 - Recursion4: [미로찾기](recursive4/)
 - Recursion5: [Counting Cells in a Blob](recursive5/)
+- Recursion6: [N Queens Problem](recursive6/)
