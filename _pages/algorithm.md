@@ -6,6 +6,10 @@ permalink: /docs/algorithm/
 layout: single
 ---
 
+## 코드 구현력 기르기
+- 코드 구현력1: [K번째 약수](implementation1/)
+- 코드 구현력2: [K번째 수](implementation2/)
+
 ## Recursion의 이해
 - Recursion1: [순환의 개념](recursive1/)
 - Recursion2: [순환적으로 사고하기](recursive2/)
