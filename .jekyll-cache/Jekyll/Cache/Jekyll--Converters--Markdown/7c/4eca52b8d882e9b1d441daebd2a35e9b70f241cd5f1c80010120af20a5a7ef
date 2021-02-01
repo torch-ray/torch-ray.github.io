@@ -1,10 +1,11 @@
-I"�<h2 id="코드-구현력-기르기">코드 구현력 기르기</h2>
+I"4<h2 id="코드-구현력-기르기">코드 구현력 기르기</h2>
 <ul>
   <li>코드 구현력1: <a href="implementation1/">K번째 약수</a></li>
   <li>코드 구현력2: <a href="implementation2/">K번째 수</a></li>
   <li>코드 구현력3: <a href="implementation3/">K번째 큰수</a></li>
   <li>선수 지식: <a href="implementation4/">최소값 구하기</a></li>
   <li>코드 구현력4: <a href="implementation5/">대표값</a></li>
+  <li>코드 구현력5: <a href="implementation6/">정다면체</a></li>
 </ul>
 
 <h2 id="recursion의-이해">Recursion의 이해</h2>

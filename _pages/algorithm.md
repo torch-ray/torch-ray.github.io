@@ -12,6 +12,7 @@ layout: single
 - 코드 구현력3: [K번째 큰수](implementation3/)
 - 선수 지식: [최소값 구하기](implementation4/)
 - 코드 구현력4: [대표값](implementation5/)
+- 코드 구현력5: [정다면체](implementation6/)
 
 ## Recursion의 이해
 - Recursion1: [순환의 개념](recursive1/)
