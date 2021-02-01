@@ -1,0 +1,43 @@
+I" <h2 id="최소값-구하기">최소값 구하기</h2>
+
+<p>참고자료: <a href="https://www.inflearn.com/course/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/lecture/49905?tab=curriculum&amp;speed=2">파이썬 알고리즘 문제풀이</a></p>
+
+<p>상기 강의 내용을 바탕으로 swift 코드로 바꿔서 요약 정리한 내용입니다.</p>
+
+<ul>
+  <li>최소값 구하는 알고리즘 학습</li>
+</ul>
+
+<h2 id="강의내용">강의내용</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">arrMin</span> <span class="o">=</span> <span class="kt">Int</span><span class="o">.</span><span class="n">max</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arrMin</span> <span class="p">{</span>
+        <span class="n">arrMin</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arrMin</span><span class="p">)</span>
+
+</code></pre></div></div>
+<p>arr에서 최소값을 찾는 알고리즘을 구현한다. arrMin 변수에는 가장 큰 정수 값을 저장한다. 이후 arr의 길이만큼 for-loop를 돌면서 arr[i]값이 arrMin보다 작으면 arrMin에 arr[i]값을 저장한다. 정수의 가장 큰 값을 활용하지 않는 방법도 있다.</p>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="k">var</span> <span class="nv">arrMin</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">..&lt;</span><span class="n">arr</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arrMin</span> <span class="p">{</span>
+    <span class="n">arrMin</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">arrMin</span><span class="p">)</span>
+</code></pre></div></div>
+<p>이런식으로 arr[0]값을 먼저 arrMin에 저장해놓고, for-loop를 1부터 시작하여 비교하는 방법도 가능하다.</p>
+
+<h2 id="파이썬-코드">파이썬 코드</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">arr</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">arrMin</span><span class="o">=</span><span class="nb">float</span><span class="p">(</span><span class="s">'inf'</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">)):</span>
+  <span class="k">if</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arrMin</span><span class="p">:</span>
+    <span class="n">arrMin</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="n">arrMin</span><span class="p">)</span>
+</code></pre></div></div>
+:ET
