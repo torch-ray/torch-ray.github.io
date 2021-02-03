@@ -15,6 +15,7 @@ layout: single
 - 코드 구현력5: [정다면체](implementation6/)
 - 코드 구현력6: [자릿수의 합](implementation7/)
 - 코드 구현력7: [소수의 개수](implementation8/)
+- 코드 구현력8: [뒤집은 소수](implementation9/)
 
 ## Recursion의 이해
 - Recursion1: [순환의 개념](recursive1/)

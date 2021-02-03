@@ -1,0 +1,434 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>알고리즘 기초 - 코드 구현력 기르기(9) - Yes! Swift</title>
+<meta name="description" content="취미는 이길 수 없다.">
+
+
+  <meta name="author" content="내가 아니면 누구도 못한다">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Yes! Swift">
+<meta property="og:title" content="알고리즘 기초 - 코드 구현력 기르기(9)">
+<meta property="og:url" content="https://torch-ray.github.io/docs/algorithm/implementation9/">
+
+
+  <meta property="og:description" content="취미는 이길 수 없다.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://torch-ray.github.io/docs/algorithm/implementation9/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "PS가 취미인 개발자의 블로그",
+      "url": "https://torch-ray.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Yes! Swift Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Yes! Swift
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">ProblemSolving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/tms">TodayMyStatus</a></li>
+          
+            <li><a href="/docs/baekjoon/">BaekJoon</a></li>
+          
+            <li><a href="/docs/leetcode/">LeetCode</a></li>
+          
+            <li><a href="/docs/programmers/">Programmers</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CoumputerScience</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/project/">Project</a></li>
+          
+            <li><a href="/docs/algorithm/">Algorithm</a></li>
+          
+            <li><a href="/docs/os/">OperatingSystem</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="알고리즘 기초 - 코드 구현력 기르기(9)">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">알고리즘 기초 - 코드 구현력 기르기(9)
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="뒤집은-소수">뒤집은 소수</h2>
+
+<p>참고자료: <a href="https://www.inflearn.com/course/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/lecture/26919?tab=curriculum">파이썬 알고리즘 문제풀이</a></p>
+
+<p>상기 강의 내용을 바탕으로 swift 코드로 바꿔서 요약 정리한 내용입니다.</p>
+
+<ul>
+  <li>문제</li>
+</ul>
+
+<p>N개의 자연수가 주어지면, 각 자연수의 뒤집은 수가 소수인지 판별하여 소수일 경우 출력하시오. 730의 경우 뒤집으면 37로, 첫자리의 0을 허락하지 않으며 거꾸로 뒤집는 함수 reverse와 소수 판별 함수 isPrime을 반드시 생성하시오.</p>
+
+<ul>
+  <li>입력예제</li>
+</ul>
+
+<p>5 (N개의 자연수)<br />
+32 55 62 3700 250</p>
+
+<ul>
+  <li>출력예제</li>
+</ul>
+
+<p>23 73</p>
+
+<h2 id="내-풀이">내 풀이</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">str</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="nf">reversed</span><span class="p">()</span>
+    <span class="k">let</span> <span class="nv">res</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">str</span><span class="p">))</span><span class="o">!</span>
+    <span class="k">return</span> <span class="n">res</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">prime</span><span class="p">:</span><span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">x</span><span class="p">]</span>
+    <span class="k">var</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">x</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">tmp</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">prime</span> <span class="o">==</span> <span class="n">tmp</span> <span class="p">?</span> <span class="nv">true</span> <span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+<span class="nf">readLine</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span>
+<span class="k">var</span> <span class="nv">a</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">n</span> <span class="p">{</span><span class="n">a</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="nf">reverse</span><span class="p">(</span><span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">)))}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">a</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span><span class="s">" "</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>지난 시간에 이어 소수 판별 문제다. 다만, 숫자가 주어지면 해당 숫자를 거꾸로 뒤집었을 때 소수인지를 판별해야 한다. reverse함수를 만들어 입력받은 숫자를 문자로 만들어서 거꾸로 뒤집은 다음 다시 정수로 변환하여 반환하였다. 그렇게 받은 수를 배열에 저장한 뒤에, 이번에는 isPrime함수로 입력하여 소수일 경우 true를 반환하도록 설계하였다. 가장 마지막 for-loop에서는 isPrime이 true를 반환할 경우에만 해당 수를 출력하도록 하였다.</p>
+
+<h2 id="강의-풀이">강의 풀이</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">res</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">var</span> <span class="nv">n</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">var</span> <span class="nv">t</span> <span class="o">=</span> <span class="n">n</span><span class="o">%</span><span class="mi">10</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">t</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">10</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">_</span> <span class="nv">x</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">2</span><span class="o">..&lt;</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">n</span><span class="o">=</span><span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span>
+<span class="k">let</span> <span class="nv">a</span><span class="o">=</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+<span class="k">for</span> <span class="n">x</span> <span class="k">in</span> <span class="n">a</span><span class="p">{</span>
+    <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="nv">terminator</span><span class="p">:</span> <span class="s">" "</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>숫자를 거꾸로 뒤집을 때, 문자열을 사용하지 않았다. 해당 수를 10으로 나눈 나머지를 t에 저장하고, res에는 res에 10을 곱하고 t를 더한 값을 다시 저장한다. 이 로직을 바탕으로 9010을 뒤집어보면, 처음엔 t에 0이 저장되고, res에도 0이 저장된다. 그 다음은 t에 1이 저장되고, res에도 1이 저장된다. 그 다음은 t에 0이저장되고 res에는 기존에 1이 있었기 때문에 곱하기 10을하여 10이 저장된다. 다음은 t에 9가 저장되고 기존 10에 10을곱하고 9를 더해주니 마지막으로 109가된다. 9010를 뒤집었을 때 값이 나온 것이다.</p>
+
+<p>이를 통해 숫자를 뒤집고 뒤집은 숫자를 바로 isPrime함수를 활용하여 소수 판별해준다. 여기서 for-loop를 x/2까지만 반복한 이유는 모든 자연수는 1과 자기자신을 제외한 약수는 그 반까지만 존재하기 때문이다. 그리고 내 코드와 마찬가지로 true를 반환한 경우에만 해당 수를 출력한다.</p>
+
+<h2 id="파이썬-코드">파이썬 코드</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">reverse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">res</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">while</span> <span class="n">x</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">t</span><span class="o">=</span><span class="n">x</span><span class="o">%</span><span class="mi">10</span>
+        <span class="n">res</span><span class="o">=</span><span class="n">res</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="n">t</span>
+        <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">//</span><span class="mi">10</span>
+    <span class="k">return</span>  <span class="n">res</span>
+
+<span class="k">def</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">x</span><span class="o">//</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">x</span><span class="o">%</span><span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">True</span>
+
+<span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">a</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">()))</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">tmp</span><span class="o">=</span><span class="n">reverse</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">isPrime</span><span class="p">(</span><span class="n">tmp</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s">' '</span><span class="p">)</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://www.facebook.com/woosuk.seo.77" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 PS가 취미인 개발자의 블로그. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
