@@ -14,7 +14,7 @@ layout: single
 
 - 최소값 구하는 알고리즘 학습
 
-## 강의내용
+## 강의 풀이
 ``` swift
 let arr = [5, 3, 7, 9, 2, 5, 2, 6]
 var arrMin = Int.max

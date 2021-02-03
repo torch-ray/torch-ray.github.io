@@ -1,0 +1,399 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>알고리즘 기초 - 코드 구현력 기르기(8) - Yes! Swift</title>
+<meta name="description" content="취미는 이길 수 없다.">
+
+
+  <meta name="author" content="내가 아니면 누구도 못한다">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Yes! Swift">
+<meta property="og:title" content="알고리즘 기초 - 코드 구현력 기르기(8)">
+<meta property="og:url" content="https://torch-ray.github.io/docs/algorithm/implementation8/">
+
+
+  <meta property="og:description" content="취미는 이길 수 없다.">
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://torch-ray.github.io/docs/algorithm/implementation8/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "PS가 취미인 개발자의 블로그",
+      "url": "https://torch-ray.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Yes! Swift Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Yes! Swift
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">Categories</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">ProblemSolving</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/tms">TodayMyStatus</a></li>
+          
+            <li><a href="/docs/baekjoon/">BaekJoon</a></li>
+          
+            <li><a href="/docs/leetcode/">LeetCode</a></li>
+          
+            <li><a href="/docs/programmers/">Programmers</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">CoumputerScience</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/docs/project/">Project</a></li>
+          
+            <li><a href="/docs/algorithm/">Algorithm</a></li>
+          
+            <li><a href="/docs/os/">OperatingSystem</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="알고리즘 기초 - 코드 구현력 기르기(8)">
+    
+    
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">알고리즘 기초 - 코드 구현력 기르기(8)
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h2 id="소수의-개수에라토스테네스-체">소수의 개수(에라토스테네스 체)</h2>
+
+<p>참고자료: <a href="https://www.inflearn.com/course/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8/lecture/26916?tab=curriculum&amp;speed=2">파이썬 알고리즘 문제풀이</a></p>
+
+<p>상기 강의 내용을 바탕으로 swift 코드로 바꿔서 요약 정리한 내용입니다.</p>
+
+<ul>
+  <li>문제</li>
+</ul>
+
+<p>자연수 N이 입력되면 1부터 N까지의 소수의 개수를 반환하시오.</p>
+
+<ul>
+  <li>입력예제</li>
+</ul>
+
+<p>20</p>
+
+<ul>
+  <li>출력예제</li>
+</ul>
+
+<p>8</p>
+
+<h2 id="내-풀이">내 풀이</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">a</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Bool</span><span class="p">](</span><span class="nv">repeating</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">var</span> <span class="nv">cnt</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">2</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="kc">false</span> <span class="p">{</span>
+        <span class="n">cnt</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="nf">stride</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="n">i</span><span class="p">,</span> <span class="nv">to</span><span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nv">by</span><span class="p">:</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+</code></pre></div></div>
+<p>에라토스테네스 체 알고리즘에 대해 알고 있어서 쉽게 해결한 문제다. 소수는 1과 자기 자신으로만 나누어 떨어지는 수를 의미하는데, 1은 소수가 될 수 없기 때문에 2부터 시작한다. 미리 n의 수만큼 생성해뒀던 Boolean타입 배열 a와 비교하면서 a[i]가 false이면 소수로 cnt 값을 올려주고, 해당 수부터 다시 for-loop를 돌면서 해당 수의 배수는 모두 true로 바꿔준다. 해당 수로 나눠 떨어지는 수는 소수가 될 수 없기 때문이다.</p>
+
+<h2 id="추가-풀이">추가 풀이</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">cnt</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="kd">func</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">_</span> <span class="nv">num</span><span class="p">:</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">res</span><span class="o">=</span><span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">1</span><span class="o">...</span><span class="n">num</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">res</span><span class="o">.</span><span class="nf">insert</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">2</span><span class="o">...</span><span class="n">n</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">prime</span><span class="p">:</span><span class="kt">Set</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">prime</span> <span class="o">==</span> <span class="nf">isPrime</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cnt</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+</code></pre></div></div>
+<p>이런식으로 set과 isPrime함수를 만들어서 비교하는 것도 가능하다. prime이라는 set을 만들어서 1과 비교가 필요한 수 i를 넣어놓고, isPrime함수로 i를 입력하여 나눠떨어지는 수를 모두 리턴하여 prime과 결과가 같으면 소수이다.</p>
+
+<h2 id="강의-풀이">강의 풀이</h2>
+
+<p>강의 풀이와 차이점이 없기 때문에 파이썬 코드를 제공하고 끝내도록 하겠다.</p>
+
+<h2 id="파이썬-코드">파이썬 코드</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="n">ch</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cnt</span><span class="o">=</span><span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ch</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="n">cnt</span><span class="o">+=</span><span class="mi">1</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
+            <span class="n">ch</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="bp">True</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cnt</span><span class="p">)</span>
+</code></pre></div></div>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+      </footer>
+
+      
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+          <li><a href="https://www.facebook.com/woosuk.seo.77" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 PS가 취미인 개발자의 블로그. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
