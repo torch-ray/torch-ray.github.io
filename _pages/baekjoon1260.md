@@ -30,13 +30,13 @@ for _ in 0..<n {
   let b = tmp[1]
 
   if graph[a] == nil {
-    graph[a] == [b]
+    graph[a] = [b]
   } else {
     graph[a].append(b)
   }
 
   if graph[b] == nil {
-    graph[b] == [a]
+    graph[b] = [a]
   } else {
     graph[b].append[a]
   }
