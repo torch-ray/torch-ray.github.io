@@ -17,6 +17,7 @@ layout: single
 - 코드 구현력8: [소수의 개수](implementation8/)
 - 코드 구현력9: [뒤집은 소수](implementation9/)
 - 코드 구현력10: [주사위 게임](implementation10/)
+- 코드 구현력11: [점수 계산](implementation11/)
 
 ## Recursion의 이해
 - Recursion1: [순환의 개념](recursive1/)
