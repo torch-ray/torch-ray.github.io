@@ -93,7 +93,7 @@ analytics:
 
 # Site Author
 author:
-  name             :  "내가 아니면 누구도 못한다"
+  name             :  "print "Hello, world!""
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              :  "Swift는 일이고 PS는 취미고"
   location         :  "South Korea"
