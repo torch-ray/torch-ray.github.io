@@ -1,4 +1,4 @@
-I"�g<h2 id="백준---dfs와-bfs">백준 - DFS와 BFS</h2>
+I"�g<h2 id="백준---dfs와-bfs">백준 - DFS와 BFS</h2>
 
 <p><img width="1158" alt="스크린샷 2021-01-20 오전 7 41 49" src="https://user-images.githubusercontent.com/74946802/105102917-fd1c2e00-5af2-11eb-880b-9275d65bae31.png" /></p>
 
@@ -22,13 +22,13 @@
   <span class="k">let</span> <span class="nv">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
   <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
   <span class="p">}</span>

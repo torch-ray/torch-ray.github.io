@@ -13,7 +13,7 @@
 <meta name="description" content="취미는 이길 수 없다.">
 
 
-  <meta name="author" content="내가 아니면 누구도 못한다">
+  <meta name="author" content="Oriented CodeJam">
   
 
 
@@ -260,13 +260,13 @@
   <span class="k">let</span> <span class="nv">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 
   <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
   <span class="p">}</span>
 
   <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
-    <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
   <span class="p">}</span>
