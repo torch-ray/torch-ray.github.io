@@ -1,0 +1,181 @@
+I"�g<h2 id="백준---dfs와-bfs">백준 - DFS와 BFS</h2>
+
+<p><img width="1158" alt="스크린샷 2021-01-20 오전 7 41 49" src="https://user-images.githubusercontent.com/74946802/105102917-fd1c2e00-5af2-11eb-880b-9275d65bae31.png" /></p>
+
+<p>문제 제목 그대로 DFS와 BFS를 출력하면된다. 방문할 수 있는 노드가 여러개인 경우 작은 숫자부터 방문하고, 더 이상 방문할 노드가 없으면 종료한다.</p>
+
+<ul>
+  <li>체크포인트: <a href="https://www.youtube.com/watch?v=_hxFgg7TLZQ">DFS와 BFS란?</a></li>
+</ul>
+
+<h2 id="입력값을-받아-딕셔너리-형태로-노드-생성">입력값을 받아 딕셔너리 형태로 노드 생성</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">guideLine</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="nv">start</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">guideLine</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">guideLine</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">var</span> <span class="nv">graph</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()]</span>
+</code></pre></div></div>
+<p>첫 번째 줄에는 [4, 5, 1]과 같이 정점의 수, 간선의 수, 시작 위치가 주어진다. 정점의 수는 문제를 해결하는데 활용되지 않기 때문에 따로 변수에 저장하지 않는다. 간선의 수는 그 수만큼 간선이 연결하는 정점의 정보를 입력받아야 하기 때문에(for문을 활용하여), n에 저장하고 DFS와 BFS를 시작할 정점의 정보는 start에 저장한다. 이후 각 정점마다 연결되어있는 정점의 정보를 저장할 빈 딕셔너리를 선언한다.</p>
+
+<h2 id="정점의-정보를-입력받아-그래프-생성">정점의 정보를 입력받아 그래프 생성</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">n</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+  <span class="k">let</span> <span class="nv">a</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+  <span class="k">let</span> <span class="nv">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+  <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">[</span><span class="n">a</span><span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>간선의 수만큼 for문을 돌면서 연결된 정점의 정보를 tmp에 저장한다. [1, 2]가 tmp에 저장된 경우 [1]은 a, [2]는 b에 저장한다. 첫 번째 if문에서는 graph[1]은 현재 nil값이기 때문에 [1: [2]]의 형태로 저장되고, graph[2]의 값도 nil이기 때문에 [2: [1]]이 저장된다. 이런식으로 [1, 2], [1, 3], [1, 4], [2, 4], [3, 4]를 모두 반복하면 graph에 [1: [2, 3, 4], 2: [1, 4], 3: [1, 4], 4: [1, 2, 3]] 와 같이 저장된다.</p>
+
+<h2 id="스택-큐-형식에-맞춰서-딕셔너리-값을-정렬">스택, 큐 형식에 맞춰서 딕셔너리 값을 정렬</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">key</span> <span class="k">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">keys</span> <span class="p">{</span>
+  <span class="n">graph</span><span class="p">[</span><span class="n">key</span><span class="p">]?</span><span class="o">.</span><span class="nf">sort</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&gt;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">printDFSResult</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="kt">DFS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printDFSResult</span> <span class="o">+=</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="k">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">keys</span> <span class="p">{</span>
+  <span class="n">graph</span><span class="p">[</span><span class="n">key</span><span class="p">]?</span><span class="o">.</span><span class="nf">sort</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">printBFSResult</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="kt">BFS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">printBFSResult</span> <span class="o">+=</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>DFS는 스택, BFS는 큐를 활용할 예정이기 때문에 DFS는 내림차순 정렬, BFS는 오름차순 정렬된 graph값을 입력받을 수 있도록 정렬을 한다. 이전 코드에서 graph값을 정렬하여 설명했지만 graph는 순서가 없기 때문에 정렬하지 않으면 어떠한 형태로 DFS, BFS를 탐색하게 될지 알 수 없다. 참고로 해당 코드에서 DFS(graph, start)나 BFS(graph, start)는 아래에서 설명할 함수의 이름이다.</p>
+
+<h2 id="dfs">DFS</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="kt">DFS</span><span class="p">(</span><span class="n">_</span> <span class="nv">graph</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">,</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]],</span> <span class="n">_</span> <span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
+  <span class="k">var</span> <span class="nv">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+
+  <span class="k">while</span> <span class="n">stack</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="nf">popLast</span><span class="p">()</span><span class="o">!</span>
+    <span class="k">if</span> <span class="n">visited</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">continue</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">visited</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="p">{</span>
+        <span class="n">stack</span> <span class="o">+=</span> <span class="n">tmp</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">visited</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>DFS함수에 내림차순으로 정렬된 graph와 start값을 입력한다. visited 변수는 방문한 정점의 정보를 저장할 예정이기 때문에 현재는 빈 배열로 선언한다. stack에는 start값을 넣고 DFS를 시작한다. while문은 모든 정점을 다 방문한 경우(즉, 스택이 빈 경우) 종료되도록 stack.count가 0보다 큰 경우에만 반복되도록 설정한다. node상수에는 stack의 값을 하나씩 pop해서 저장한다. 현재는 [1]만 들어가있기 때문에 node에 1이 저장된다. 다음 if문이 실행되는데 visited 변수는 현재 비어 있기 때문에 else문이 실행되고 visited에 1이 저장된다. 그리고 graph[node]는 현재 graph[1]이기 때문에 stack에 내림차순된 graph[1]의 값인 [4, 3, 2]가 저장된다. 그리고 while문은 모든 정점을 방문할 때까지 반복되고 종료된다.</p>
+
+<h2 id="bfs">BFS</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="kt">BFS</span><span class="p">(</span><span class="n">_</span> <span class="nv">graph</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">,</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]],</span> <span class="n">_</span> <span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+  <span class="k">var</span> <span class="nv">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
+  <span class="k">var</span> <span class="nv">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+
+  <span class="k">while</span> <span class="n">queue</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">visited</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">continue</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="n">visited</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+      <span class="k">if</span> <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="p">{</span>
+        <span class="n">queue</span> <span class="o">+=</span> <span class="n">tmp</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">visited</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>BFS도 DFS와 전체적인 동작원리는 비슷하다. 하지만 다른점은 stack대신에 queue 자료구조를 사용한다는 것이다. 따라서 DFS와의 차이점은 popLast가 아니라 remove(at: 0)이 사용된다는 점이고(FIFO), 입력받은 graph의 값도 오름차순이기 때문에 graph[1]을 queue에 저장할 때 [4, 3, 2]가 아닌 [2, 3, 4]가 저장된다는 점이다.</p>
+
+<h2 id="전체코드">전체코드</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">let</span> <span class="nv">guideLine</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+<span class="k">let</span> <span class="p">(</span><span class="nv">n</span><span class="p">,</span> <span class="nv">start</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="n">guideLine</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">guideLine</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="k">var</span> <span class="nv">graph</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]]()</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="k">in</span> <span class="mi">0</span><span class="o">..&lt;</span><span class="n">n</span> <span class="p">{</span>
+    <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="nf">readLine</span><span class="p">()</span><span class="o">!.</span><span class="n">split</span><span class="p">{</span><span class="nv">$0</span><span class="o">==</span><span class="s">" "</span><span class="p">}</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="kt">Int</span><span class="p">(</span><span class="nv">$0</span><span class="p">)</span><span class="o">!</span><span class="p">}</span>
+    <span class="k">let</span> <span class="nv">a</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">let</span> <span class="nv">b</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="p">]</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">a</span><span class="p">]?</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">==</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">graph</span><span class="p">[</span><span class="n">b</span><span class="p">]?</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="k">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">keys</span> <span class="p">{</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">key</span><span class="p">]?</span><span class="o">.</span><span class="nf">sort</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&gt;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">printDFSResult</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="kt">DFS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printDFSResult</span> <span class="o">+=</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span>
+<span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="k">in</span> <span class="n">graph</span><span class="o">.</span><span class="n">keys</span> <span class="p">{</span>
+    <span class="n">graph</span><span class="p">[</span><span class="n">key</span><span class="p">]?</span><span class="o">.</span><span class="nf">sort</span><span class="p">(</span><span class="nv">by</span><span class="p">:</span> <span class="o">&lt;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">var</span> <span class="nv">printBFSResult</span> <span class="o">=</span> <span class="s">""</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="kt">BFS</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span> <span class="n">start</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printBFSResult</span> <span class="o">+=</span> <span class="kt">String</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s">" "</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="kt">DFS</span><span class="p">(</span><span class="n">_</span> <span class="nv">graph</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]],</span> <span class="n">_</span> <span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
+    <span class="k">var</span> <span class="nv">stack</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+
+    <span class="k">while</span> <span class="n">stack</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">node</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="nf">popLast</span><span class="p">()</span><span class="o">!</span>
+        <span class="k">if</span> <span class="n">visited</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">continue</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">visited</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="p">{</span>
+                <span class="n">stack</span> <span class="o">+=</span> <span class="n">tmp</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">visited</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="kt">BFS</span><span class="p">(</span><span class="n">_</span> <span class="nv">graph</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">:</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]],</span> <span class="n">_</span> <span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">visited</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">]()</span>
+    <span class="k">var</span> <span class="nv">queue</span> <span class="o">=</span> <span class="p">[</span><span class="n">start</span><span class="p">]</span>
+
+    <span class="k">while</span> <span class="n">queue</span><span class="o">.</span><span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">let</span> <span class="nv">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="nf">remove</span><span class="p">(</span><span class="nv">at</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">visited</span><span class="o">.</span><span class="nf">contains</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">continue</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">visited</span><span class="o">.</span><span class="nf">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+            <span class="k">if</span> <span class="k">let</span> <span class="nv">tmp</span> <span class="o">=</span> <span class="n">graph</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="p">{</span>
+                <span class="n">queue</span> <span class="o">+=</span> <span class="n">tmp</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">visited</span>
+<span class="p">}</span>
+
+<span class="nf">print</span><span class="p">(</span><span class="n">printDFSResult</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">printBFSResult</span><span class="p">)</span>
+</code></pre></div></div>
+:ET
