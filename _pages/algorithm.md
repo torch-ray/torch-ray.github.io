@@ -19,6 +19,9 @@ layout: single
 - 코드 구현력10: [주사위 게임](implementation10/)
 - 코드 구현력11: [점수 계산](implementation11/)
 
+## 탐색 & 시뮬레이션
+- 탐색 시뮬레이션1: [회문 문자열 검사](search1/)
+
 ## Recursion의 이해
 - Recursion1: [순환의 개념](recursive1/)
 - Recursion2: [순환적으로 사고하기](recursive2/)
