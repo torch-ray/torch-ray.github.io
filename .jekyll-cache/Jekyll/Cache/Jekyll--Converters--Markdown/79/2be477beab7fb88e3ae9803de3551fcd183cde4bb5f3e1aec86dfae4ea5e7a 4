@@ -1,0 +1,49 @@
+I"}<h2 id="리트코드---longest-common-prefix">리트코드 - Longest Common Prefix</h2>
+
+<p><img width="598" alt="스크린샷 2021-01-14 오전 7 50 59" src="https://user-images.githubusercontent.com/74946802/104519999-b97e7b80-563d-11eb-939e-5deb47e40106.png" /></p>
+
+<p>문자열이 담긴 배열이 주어지면 각 문자열을 비교하여 가장 긴 공통된 문자열을 찾아 출력하는 문제이다. 공통되는 부분이 없으면 공백문자열을 출력하면 된다. 예를들어 flower와 flow가 주어지면 flow가 정답이고, flight가 추가되면 fl이 정답이다.</p>
+
+<ul>
+  <li>체크포인트: 주어진 문제의 제목대로 prefix를 활용할 것</li>
+</ul>
+
+<h2 id="빈-배열이-입력될-케이스-예외처리">빈 배열이 입력될 케이스 예외처리</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">func</span> <span class="nf">longestCommonPrefix</span><span class="p">(</span><span class="n">_</span> <span class="nv">strs</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">String</span> <span class="p">{</span>
+
+  <span class="k">if</span> <span class="n">strs</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">{</span><span class="k">return</span> <span class="s">""</span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>문자열이 담긴 배열 strs의 길이가 1보다 작은 경우에는 빈 문자열을 리턴하면된다.</p>
+
+<h2 id="가장-짧은-문자열-찾기">가장 짧은 문자열 찾기</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">minStr</span> <span class="o">=</span> <span class="p">(</span><span class="n">strs</span><span class="o">.</span><span class="n">min</span><span class="p">{</span><span class="nv">$0</span><span class="o">.</span><span class="n">count</span> <span class="o">&lt;</span> <span class="nv">$1</span><span class="o">.</span><span class="n">count</span><span class="p">})</span><span class="o">!</span>
+</code></pre></div></div>
+
+<p>클로저 문법을 활용하여 문자열이 담긴 배열 strs에서 가장 길이가 짧은 문자열을 minStr 변수에 저장한다. 클로저 문법을 통해 반환된 문자열은 Optional String이기 때문에 !를 활용하여 Unwrapping해준다. 앞선 코드에서 빈 문자열의 경우 예외처리를 해놨기 때문에 nil값이 입력되어 오류를 반환할 걱정은 하지 않아도 된다.</p>
+
+<h2 id="minstr을-다른-문자열과-비교하며-공통된-문자열찾기">minStr을 다른 문자열과 비교하며 공통된 문자열찾기</h2>
+
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">str</span> <span class="k">in</span> <span class="n">strs</span> <span class="p">{</span>
+  <span class="k">while</span> <span class="o">!</span><span class="p">(</span><span class="n">str</span><span class="o">.</span><span class="nf">hasPrefix</span><span class="p">(</span><span class="n">minStr</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">minStr</span><span class="o">.</span><span class="nf">removeLast</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="n">minStr</span>
+</code></pre></div></div>
+
+<p>for-loop를 활용하여 문자열을 담고있는 strs배열을 돌며 while문에서 minStr과 비교한다. hasPrefix를 통해 각 문자열이 minStr를 prefix로 가지고 있는 지를 비교하고 그렇지 않다면 minStr의 마지막 element를 하나씩 제거한다. 예를들면 minStr이 flow일 때 str이 flower라면 flower는 flow를 그대로 가지고 있기 때문에 minStr.removeLast()는 실행되지 않는다. 하지만, flow와 flight를 비교해보면 flight는 flow를 그대로 가지고 있지 않기 때문에 while문이 실행되고 flow에서 w가 삭제된다. flo역시 마찬가지이기 때문에 o가 삭제되고 fl이 됐을 때 while문이 종료된다. 그후 minStr을 리턴하면 정답인 fl이 반환된다.</p>
+
+<h2 id="전체코드">전체코드</h2>
+
+<p><img width="422" alt="스크린샷 2021-01-14 오전 8 19 28" src="https://user-images.githubusercontent.com/74946802/104521929-3f4ff600-5641-11eb-9acb-eee7e50c09eb.png" /></p>
+
+<p>사실 위에서 설명한 코드는 본 문제를 가장 깔끔하게 해결한 다른 사람의 코드를 그대로 가져와 설명한 것이다. hasPrefix기능을 완전히 이해하고 활용한 코드인데 감탄이 나올 수밖에 없어서 공유를 하게 됐다. 본 문제를 해결한 본인의 코드는 아래와 같다. 이해하기도 매우 어려우니 굳이 참고하지 않아도된다. (런타임에서도 내 코드는  48ms, 위코드는 8ms다.)</p>
+
+<p>오늘의 교훈: 문제 풀기 전에 설계를 먼저하자 &amp;&amp; 문법 공부가 절실하다</p>
+
+<p><img width="548" alt="스크린샷 2021-01-14 오전 8 21 22" src="https://user-images.githubusercontent.com/74946802/104522060-85a55500-5641-11eb-8d9e-f4530ac87d6e.png" /></p>
+:ET

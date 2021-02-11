@@ -23,6 +23,7 @@ layout: single
 - 탐색 시뮬레이션1: [회문 문자열 검사](search1/)
 - 탐색 시뮬레이션2: [숫자만 추출](search2/)
 - 탐색 시뮬레이션3: [카드 역배치](search3/)
+- 탐색 시뮬레이션4: [두 리스트 합치기](search4/)
 
 ## Recursion의 이해
 - Recursion1: [순환의 개념](recursive1/)

@@ -1,0 +1,43 @@
+I"�!<h2 id="백준---1로-만들기">백준 - 1로 만들기</h2>
+
+<p><img width="1151" alt="스크린샷 2021-01-21 오전 9 19 25" src="https://user-images.githubusercontent.com/74946802/105256779-c7964400-5bc9-11eb-8543-7121a8f39017.png" /></p>
+
+<p>1보다 크거나 같고 10^6보다 작거나 같은 정수 N이 주어졌을 때 (1). 3으로 나누기, (2), 2로 나누기, (3). 1빼기를 활용하여 1로 만들기 위해 연산을 하는 최소 횟수를 구하는 문제이다.</p>
+
+<ul>
+  <li>체크포인트1: 모든 수를 주어진 방식대로 연산하다보면 반드시 이전 수가 나온다.</li>
+  <li>체크포인트2: <a href="https://www.youtube.com/watch?v=K15qLnKKrow">동적계획법</a></li>
+  <li>체크포인트3: 2와 3의 배수, 즉 6의 배수의 처리</li>
+</ul>
+
+<h2 id="입력값-저장-및-빈-배열-생성">입력값 저장 및 빈 배열 생성</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">dp</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">](</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></div>
+<p>readLine을 활용하여 전달받은 입력값을 Int로 변환하여 상수 n에 저장한다. 그리고 동적계획법을 활용하기 위해 빈 배열을 생성한다.</p>
+
+<h2 id="동적-계획법-활용">동적 계획법 활용</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">2</span><span class="o">..&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">{</span>
+  <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</code></pre></div></div>
+<p>생각보다 구현자체는 어렵지 않다. for문이 2부터 시작하는 이유는 입력될 수 있는 최소 값이 1인데, 1의 경우는 1로 만들기 위해 어떠한 연산도 필요없기 때문에 바로 0을 출력하는 예외처리를 해주면된다. 2부터 시작되는 경우 dp[2] = dp[1]+1인데, dp[1]은 앞서서 말했던 것처럼 0이기 때문에 dp[2]에는 0 + 1의 값인 1이 저장된다. 이와 같이 증가하는 수에 대해 이전값과 비교하여 1을 더해주면되는데, 이때 3으로 나눈값 또는 2로 나눈값과 비교하여 더 작은수를 저장하면된다.</p>
+
+<p>일단 default값은 dp[i-1] + 1값으로 설정을 해둔다. 그리고 i가 3으로 나누어 떨어지는 경우는 default값과 3으로 나눈값에 + 1을 해주는 경우를 비교한다. 마찬가지로 2로 나누어 떨어지는 경우는 default값과 2로 나누어 떨어지는 경우를 비교하여 더 작은 값을 저장하면 된다.</p>
+
+<p>이 때 if문을 if, else if형태로 쓰지 않고, if + if 문을 사용하는 이유는 6의 배수의 경우 때문이다. 6의 배수의 경우 if, else구문을 쓰게된다면 두 조건 중 하나의 조건만 비교하고 종료하게 되는데 그럴 경우에는 오답이 출력된다.</p>
+
+<h2 id="전체코드">전체코드</h2>
+<div class="language-swift highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">var</span> <span class="nv">n</span> <span class="o">=</span> <span class="kt">Int</span><span class="p">(</span><span class="nf">readLine</span><span class="p">()</span><span class="o">!</span><span class="p">)</span><span class="o">!</span>
+<span class="k">var</span> <span class="nv">dp</span> <span class="o">=</span> <span class="p">[</span><span class="kt">Int</span><span class="p">](</span><span class="nv">repeating</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">count</span><span class="p">:</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">2</span><span class="o">..&lt;</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="p">{</span>
+    <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">3</span><span class="o">==</span><span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="p">{</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="nf">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">2</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+<span class="p">}</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">n</span><span class="o">==</span><span class="mi">1</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</code></pre></div></div>
+:ET
