@@ -26,7 +26,8 @@ layout: single
 - 탐색 시뮬레이션4: [두 리스트 합치기](search4/)
 - 탐색 시뮬레이션5: [수의 합](search5/)
 - 탐색 시뮬레이션6: [격자판 최대합](search6/)
-- 탐색 시뮬레이션6: [사과나무](search7/)
+- 탐색 시뮬레이션7: [사과나무](search7/)
+- 탐색 시뮬레이션8: [곳감](search8/)
 
 ## Recursion의 이해
 - Recursion1: [순환의 개념](recursive1/)
